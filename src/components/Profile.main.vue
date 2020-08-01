@@ -8,19 +8,22 @@
             class="triger"
             :class="{ triger_active: isActive('queue') }"
             href="#queue"
-          >Очередь просмотра</a>
+            >Очередь просмотра</a
+          >
           <a
             @click.prevent="setActive('favorites')"
             class="triger"
             :class="{ triger_active: isActive('favorites') }"
             href="#favorites"
-          >Избранное</a>
+            >Избранное</a
+          >
           <a
             @click.prevent="setActive('viewed')"
             class="triger"
             :class="{ triger_active: isActive('viewed') }"
             href="#viewed"
-          >Просмотренные</a>
+            >Просмотренные</a
+          >
         </div>
         <div class="profile_wrap_content">
           <div class="profile_content_wrap">
@@ -30,17 +33,27 @@
               :class="{ profile_content_active: isActive('queue') }"
             >
               <p class="empty" v-if="!viewed.length">Пока пусто</p>
-              <div v-else v-for="v in viewed" :key="v.imdbID" class="cards_wrap">
+              <div
+                v-else
+                v-for="v in viewed"
+                :key="v.imdbID"
+                class="cards_wrap"
+              >
                 <div class="card_movie">
-                  <a @click.prevent="$router.push(`/movie/${v.imdbID}`)" href="#">
+                  <a
+                    @click.prevent="$router.push(`/movie/${v.imdbID}`)"
+                    href="#"
+                  >
                     <h3 class="card_movie_title">
-                      {{v.Title}}
-                      <span class="year">{{v.Year}}</span>
+                      {{ v.Title }}
+                      <span class="year">{{ v.Year }}</span>
                     </h3>
                     <img
-                      :src="v.Poster === 'N/A'
-                      ? 'https://lh3.googleusercontent.com/proxy/ugCAXbStHhcLWGcOTd66dc5oY2vCwK7vvrnBVw2Iz01obryYt7PkSZlGXVK-waUraUA4kZPaGzjImYfPpDzTBRIO8umk6fjXu83hD_7mLY60RFqPH30mTA'
-                      : v.Poster"
+                      :src="
+                        v.Poster === 'N/A'
+                          ? 'https://lh3.googleusercontent.com/proxy/ugCAXbStHhcLWGcOTd66dc5oY2vCwK7vvrnBVw2Iz01obryYt7PkSZlGXVK-waUraUA4kZPaGzjImYfPpDzTBRIO8umk6fjXu83hD_7mLY60RFqPH30mTA'
+                          : v.Poster
+                      "
                       :alt="v.Title"
                     />
                   </a>
@@ -53,17 +66,27 @@
               :class="{ profile_content_active: isActive('favorites') }"
             >
               <p class="empty" v-if="!favorite.length">Пока пусто</p>
-              <div v-else v-for="f in favorite" :key="f.imdbID" class="cards_wrap">
+              <div
+                v-else
+                v-for="f in favorite"
+                :key="f.imdbID"
+                class="cards_wrap"
+              >
                 <div class="card_movie">
-                  <a @click.prevent="$router.push(`/movie/${f.imdbID}`)" href="#">
+                  <a
+                    @click.prevent="$router.push(`/movie/${f.imdbID}`)"
+                    href="#"
+                  >
                     <h3 class="card_movie_title">
-                      {{f.Title}}
-                      <span class="year">{{f.Year}}</span>
+                      {{ f.Title }}
+                      <span class="year">{{ f.Year }}</span>
                     </h3>
                     <img
-                      :src="f.Poster === 'N/A'
-                      ? 'https://lh3.googleusercontent.com/proxy/ugCAXbStHhcLWGcOTd66dc5oY2vCwK7vvrnBVw2Iz01obryYt7PkSZlGXVK-waUraUA4kZPaGzjImYfPpDzTBRIO8umk6fjXu83hD_7mLY60RFqPH30mTA'
-                      : f.Poster"
+                      :src="
+                        f.Poster === 'N/A'
+                          ? 'https://lh3.googleusercontent.com/proxy/ugCAXbStHhcLWGcOTd66dc5oY2vCwK7vvrnBVw2Iz01obryYt7PkSZlGXVK-waUraUA4kZPaGzjImYfPpDzTBRIO8umk6fjXu83hD_7mLY60RFqPH30mTA'
+                          : f.Poster
+                      "
                       :alt="f.Title"
                     />
                   </a>
@@ -76,17 +99,27 @@
               :class="{ profile_content_active: isActive('viewed') }"
             >
               <p class="empty" v-if="!viewed.length">Пока пусто</p>
-              <div v-else v-for="v in viewed" :key="v.imdbID" class="cards_wrap">
+              <div
+                v-else
+                v-for="v in viewed"
+                :key="v.imdbID"
+                class="cards_wrap"
+              >
                 <div class="card_movie">
-                  <a @click.prevent="$router.push(`/movie/${v.imdbID}`)" href="#">
+                  <a
+                    @click.prevent="$router.push(`/movie/${v.imdbID}`)"
+                    href="#"
+                  >
                     <h3 class="card_movie_title">
-                      {{v.Title}}
-                      <span class="year">{{v.Year}}</span>
+                      {{ v.Title }}
+                      <span class="year">{{ v.Year }}</span>
                     </h3>
                     <img
-                      :src="v.Poster === 'N/A'
-                      ? 'https://lh3.googleusercontent.com/proxy/ugCAXbStHhcLWGcOTd66dc5oY2vCwK7vvrnBVw2Iz01obryYt7PkSZlGXVK-waUraUA4kZPaGzjImYfPpDzTBRIO8umk6fjXu83hD_7mLY60RFqPH30mTA'
-                      : v.Poster"
+                      :src="
+                        v.Poster === 'N/A'
+                          ? 'https://lh3.googleusercontent.com/proxy/ugCAXbStHhcLWGcOTd66dc5oY2vCwK7vvrnBVw2Iz01obryYt7PkSZlGXVK-waUraUA4kZPaGzjImYfPpDzTBRIO8umk6fjXu83hD_7mLY60RFqPH30mTA'
+                          : v.Poster
+                      "
                       :alt="v.Title"
                     />
                   </a>
@@ -121,30 +154,24 @@ export default {
   async created() {
     const localFavorite = JSON.parse(localStorage.getItem("favorite"));
     let favoriteFetch = [];
-    if (localFavorite !== null) {
-      localFavorite.forEach(async (el) => {
-        favoriteFetch.push(await this.$store.dispatch("fetchMovie", el));
-      });
-      this.favorite = favoriteFetch;
-    }
+    localFavorite.forEach(async (el) => {
+      favoriteFetch.push(await this.$store.dispatch("fetchMovie", el));
+    });
+    this.favorite = favoriteFetch;
 
     const localListView = JSON.parse(localStorage.getItem("listView"));
-    if (localListView !== null) {
-      let listViewFetch = [];
-      localListView.forEach(async (el) => {
-        localListView.push(await this.$store.dispatch("fetchMovie", el));
-      });
-      this.listView = listViewFetch;
-    }
+    let listViewFetch = [];
+    localListView.forEach(async (el) => {
+      localListView.push(await this.$store.dispatch("fetchMovie", el));
+    });
+    this.listView = listViewFetch;
 
     const localViewed = JSON.parse(localStorage.getItem("viewed"));
-    if (localViewed !== null) {
-      let viewedFetch = [];
-      localViewed.forEach(async (el) => {
-        viewedFetch.push(await this.$store.dispatch("fetchMovie", el));
-      });
-      this.viewed = viewedFetch;
-    }
+    let viewedFetch = [];
+    localViewed.forEach(async (el) => {
+      viewedFetch.push(await this.$store.dispatch("fetchMovie", el));
+    });
+    this.viewed = viewedFetch;
   },
 };
 </script>
